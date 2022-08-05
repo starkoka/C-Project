@@ -4,6 +4,7 @@
 
 
 int main(char){
+    /*初期化、および英文の取得*/
     int c=0,n=-1,m=0,i;
     char S[BUFSIZ];
     char cmd;

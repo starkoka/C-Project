@@ -39,10 +39,10 @@ int main(char){
     m=-1; /*今何文字目?*/
     char list[c][n];
     char oldlist[c][n];
-    for(int i=0;i<c;i++){
+    for(i=0;i<c;i++){
         for(int j=0;j<n+1;j++){
             m++;
-            if(S[m]==' ' || S[m]=='\000'){
+            if(S[m]==' ' || S[m]=='\000' || S[m]=='\n'){
                 for(int k=0;k<n-j;k++){
                     list[i][j+k]='\000';
                     oldlist[i][j+k]='\000';
@@ -87,7 +87,7 @@ int main(char){
             printf("8月10日提出のコンピューター演習1の課題(4)のプログラムです。\n");
         }
         else if(cmd=='p'){
-            for(int i=0;i<c;i++){
+            for(i=0;i<c;i++){
                 for(int j=0;j<n;j++){
                     if(list[i][j]=='\000'){break;}
                     else{printf("%c",list[i][j]);}
@@ -96,7 +96,7 @@ int main(char){
             }
         }
         else if(cmd=='q'){
-            for(int i=0;i<c;i++){
+            for(i=0;i<c;i++){
                 for(int j=0;j<n;j++){
                     if(oldlist[i][j]=='\000'){break;}
                     else{printf("%c",oldlist[i][j]);}
@@ -105,7 +105,106 @@ int main(char){
             }
         }
         else if(cmd=='s'){
-
+            int o=1,n1=n,n2=n;
+            /*一つ右隣りと比較して、アルファベット順に並び変える*/
+            for(i=0;i<c-1;i++){
+                for (int j = 0; j <n; ++j) {
+                    if(list[i][j]=='\000'){
+                        n1=j+1;
+                        break;
+                    }
+                }
+                for (int j = 0; j <n; ++j) {
+                    if(list[i+1][j]=='\000'){
+                        n2=j+1;
+                        break;
+                    }
+                }
+                char check1[n1];
+                char check2[n2];
+                for(int j=0;j<n1;j++){
+                    if(list[i][j]=='\000'){break;}
+                    else{
+                        if(list[i][j]>96){
+                            check1[j]=list[i][j]-32;
+                        }
+                        else{
+                            check1[j]=list[i][j];
+                        }
+                    }
+                }
+                for (int j = 0; j < n2; ++j) {
+                    if(list[i][j]>96){
+                        check2[j]=list[i+1][j]-32;
+                    }
+                    else{
+                        check2[j]=list[i+1][j];
+                    }
+                }
+                if(strcmp(check1,check2)>0){
+                    o=0;
+                    char m[n];
+                    for(int j=0;j<n;j++){
+                        m[j]=list[i][j];
+                    }
+                    for(int j=0;j<n;j++){
+                        list[i][j]=list[i+1][j];
+                    }
+                    for(int j=0;j<n;j++){
+                        list[i+1][j]=m[j];
+                    }
+                }
+            }
+            /*並び替えが生じなくなるまで比較・入れ替えを繰り返す*/
+            while(o==0) {
+                o = 1;
+                for (i = 0; i < c - 1; i++) {
+                    for (int j = 0; j < n; ++j) {
+                        if (list[i][j] == '\000') {
+                            n1 = j + 1;
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < n; ++j) {
+                        if (list[i + 1][j] == '\000') {
+                            n2 = j + 1;
+                            break;
+                        }
+                    }
+                    char check1[n1];
+                    char check2[n2];
+                    for (int j = 0; j < n1; j++) {
+                        if (list[i][j] == '\000') { break; }
+                        else {
+                            if (list[i][j] > 96) {
+                                check1[j] = list[i][j] - 32;
+                            } else {
+                                check1[j] = list[i][j];
+                            }
+                        }
+                    }
+                    for (int j = 0; j < n2; ++j) {
+                        if (list[i][j] > 96) {
+                            check2[j] = list[i + 1][j] - 32;
+                        } else {
+                            check2[j] = list[i + 1][j];
+                        }
+                    }
+                    if (strcmp(check1, check2) > 0) {
+                        o = 0;
+                        char m[n];
+                        for (int j = 0; j < n; j++) {
+                            m[j] = list[i][j];
+                        }
+                        for (int j = 0; j < n; j++) {
+                            list[i][j] = list[i + 1][j];
+                        }
+                        for (int j = 0; j < n; j++) {
+                            list[i + 1][j] = m[j];
+                        }
+                    }
+                }
+            }
         }
         else{
             if(cmd!='z')printf("ヘルプを表示するには、コマンドhを入力してください\n\n");

@@ -104,6 +104,108 @@ int main(char){
                 printf("\n");
             }
         }
+        else if(cmd=='t'){
+            int o=1,n1=n,n2=n;
+            /*一つ右隣りと比較して、アルファベット順に並び変える*/
+            for(i=0;i<c-1;i++){
+                for (int j = 0; j <n; ++j) {
+                    if(list[i][j]=='\000'){
+                        n1=j+1;
+                        break;
+                    }
+                }
+                for (int j = 0; j <n; ++j) {
+                    if(list[i+1][j]=='\000'){
+                        n2=j+1;
+                        break;
+                    }
+                }
+                char check1[n1];
+                char check2[n2];
+                for(int j=0;j<n1;j++){
+                    if(list[i][j]=='\000'){break;}
+                    else{
+                        if(list[i][j]>96){
+                            check1[j]=list[i][j]-32;
+                        }
+                        else{
+                            check1[j]=list[i][j];
+                        }
+                    }
+                }
+                for (int j = 0; j < n2; ++j) {
+                    if(list[i][j]>96){
+                        check2[j]=list[i+1][j]-32;
+                    }
+                    else{
+                        check2[j]=list[i+1][j];
+                    }
+                }
+                if(strcmp(check1,check2)<0){
+                    o=0;
+                    char m[n];
+                    for(int j=0;j<n;j++){
+                        m[j]=list[i][j];
+                    }
+                    for(int j=0;j<n;j++){
+                        list[i][j]=list[i+1][j];
+                    }
+                    for(int j=0;j<n;j++){
+                        list[i+1][j]=m[j];
+                    }
+                }
+            }
+            /*並び替えが生じなくなるまで比較・入れ替えを繰り返す*/
+            while(o==0) {
+                o = 1;
+                for (i = 0; i < c - 1; i++) {
+                    for (int j = 0; j < n; ++j) {
+                        if (list[i][j] == '\000') {
+                            n1 = j + 1;
+                            break;
+                        }
+                    }
+                    for (int j = 0; j < n; ++j) {
+                        if (list[i + 1][j] == '\000') {
+                            n2 = j + 1;
+                            break;
+                        }
+                    }
+                    char check1[n1];
+                    char check2[n2];
+                    for (int j = 0; j < n1; j++) {
+                        if (list[i][j] == '\000') { break; }
+                        else {
+                            if (list[i][j] > 96) {
+                                check1[j] = list[i][j] - 32;
+                            } else {
+                                check1[j] = list[i][j];
+                            }
+                        }
+                    }
+                    for (int j = 0; j < n2; ++j) {
+                        if (list[i][j] > 96) {
+                            check2[j] = list[i + 1][j] - 32;
+                        } else {
+                            check2[j] = list[i + 1][j];
+                        }
+                    }
+                    if (strcmp(check1, check2) < 0) {
+                        o = 0;
+                        char m[n];
+                        for (int j = 0; j < n; j++) {
+                            m[j] = list[i][j];
+                        }
+                        for (int j = 0; j < n; j++) {
+                            list[i][j] = list[i + 1][j];
+                        }
+                        for (int j = 0; j < n; j++) {
+                            list[i + 1][j] = m[j];
+                        }
+                    }
+                }
+            }
+        }
         else if(cmd=='s'){
             int o=1,n1=n,n2=n;
             /*一つ右隣りと比較して、アルファベット順に並び変える*/

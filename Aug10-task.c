@@ -63,7 +63,6 @@ int main(char){
     printf("q  原文を表示\n");
     printf("s  辞書順にソート\n");
     printf("t  逆順にソート\n");
-    printf("d  重複している単語を削除\n");
     printf("a  プロググラムの概要\n");
     printf("z  プログラムを終了\n");
     printf("----------------------------\n\n");
@@ -78,7 +77,6 @@ int main(char){
             printf("q  原文を表示\n");
             printf("s  辞書順にソート\n");
             printf("t  逆順にソート\n");
-            printf("d  重複している単語を削除\n");
             printf("a  プロググラムの概要\n");
             printf("z  プログラムを終了\n");
             printf("----------------------------\n\n");

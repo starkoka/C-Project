@@ -14,3 +14,8 @@ This assignment is due on August 10. The assignment is to store the received Eng
 This is an expanded version of the assignment given on October 6: "Enter a date and the number of days since the year 2000 and today's day of the week will be output.
 
 10月6日に出された、「日付を入力すると、2000年からの日数と今日の曜日が出力される」という課題の発展版です。
+
+##stopwatch.c
+The assignment, "Stopwatch with m key to stop/resume and r key to reset," was given on October 13.
+
+10月13日に出された、「mキーでストップ/再開、rキーでリセットするストップウォッチ」という課題です。

@@ -27,6 +27,11 @@ This is a program that reads the contents of read.c, removes newlines, puts them
 
 10月20日に出された、read.cの内容を読み取り、改行を削除して配列に入れ、コメントだけ抜き出すプログラムです。
 
+### XOR.c
+This is a program that defines a NAND function and uses it to create an XOR, which was submitted on November 3.
+
+11月3日に出された、NAND関数を定義してそれを使ってXORを作るプログラムです。
+
 ### 2shin-ketasoroe.c
 This is an improved version of the program issued on November 10 that aligns the number of digits in the list of binary numbers, including negative numbers.
 

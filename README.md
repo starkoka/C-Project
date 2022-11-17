@@ -26,3 +26,8 @@ The assignment, "Stopwatch with m key to stop/resume and r key to reset," was gi
 This is a program that reads the contents of read.c, removes newlines, puts them in an array, and extracts only the comments, as submitted on October 20.
 
 10月20日に出された、read.cの内容を読み取り、改行を削除して配列に入れ、コメントだけ抜き出すプログラムです。
+
+### 2shin-ketasoroe.c
+This is an improved version of the program issued on November 10 that aligns the number of digits in the list of binary numbers, including negative numbers.
+
+11月10日に出された、負の数を含めた2進数一覧のプログラムの桁数を揃えるように改良したものです。

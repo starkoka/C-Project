@@ -36,3 +36,8 @@ This is a program that defines a NAND function and uses it to create an XOR, whi
 This is an improved version of the program issued on November 10 that aligns the number of digits in the list of binary numbers, including negative numbers.
 
 11月10日に出された、負の数を含めた2進数一覧のプログラムの桁数を揃えるように改良したものです。
+
+### kairo_hissan.c
+It is a digit-free version of the one given on November 24, which uses logic circuits to add binary numbers.****
+
+11月24日に出された、2進数の足し算を論理回路で行うやつを、桁数フリーにしたものです。

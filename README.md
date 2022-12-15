@@ -41,3 +41,7 @@ This is an improved version of the program issued on November 10 that aligns the
 It is a digit-free version of the one given on November 24, which uses logic circuits to add binary numbers.****
 
 11月24日に出された、2進数の足し算を論理回路で行うやつを、桁数フリーにしたものです。
+### 2shin_tashihiki
+A program that adds or subtracts binary numbers up to four digits from each other, issued on December 15.
+
+12月15日に出された、4桁までの2進数同士を足したり引いたりするプログラムです

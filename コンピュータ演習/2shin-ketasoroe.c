@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int ten2two(int a){
     if (a>=2)  {
         ten2two(a/2);

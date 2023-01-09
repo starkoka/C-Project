@@ -50,8 +50,8 @@ int main ()
     int k=0;
     int c[sizeof(a)/sizeof(int)];
     for(int i=0;i<sizeof(a)/sizeof(int);i++){
-        c[sizeof(a)/sizeof(int)-i-1]=FA_1(a[i],b[i],k);
-        k=FA_2(a[i],b[i],k);
+        c[sizeof(a)/sizeof(int)-i-1]=FA_1(a[sizeof(a)/sizeof(int)-i-1],b[sizeof(a)/sizeof(int)-i-1],k);
+        k=FA_2(a[sizeof(a)/sizeof(int)-i-1],b[sizeof(a)/sizeof(int)-i-1],k);
     }
 
     for(int i=0;i<sizeof(a)/sizeof(int);i++){
@@ -63,7 +63,7 @@ int main ()
     }
     printf("\n------\n%d",k);
     for(int i=0;i<sizeof(a)/sizeof(int);i++){
-        printf("%d",b[i]);
+        printf("%d",c[i]);
     }
 
     return 0;
